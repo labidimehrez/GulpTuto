@@ -1,13 +1,12 @@
+## STEP BY STEP
 
-## STEP BY STEP  ## install gulp help
+$npm install gulp-cli -g
 
-$ npm install gulp-cli -g
+$npm install gulp -D
 
-$ npm install gulp -D
+$touch gulpfile.js
 
-$ touch gulpfile.js
-
-$ gulp --help
+$gulp --help
 
 
 
@@ -20,7 +19,8 @@ $npm install --save-dev gulp-csso
 $npm install --save-dev gulp-minify
 
 $npm install --save-dev gulp-imagemin
- 
+
+$npm npm install --save gulp-htmlmin
 
 
 ## run Task
@@ -31,4 +31,4 @@ $gulp jsTask
 
 $gulp imgTask
 
-$gulp watch // watcher
+$gulp watch

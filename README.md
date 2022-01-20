@@ -22,6 +22,9 @@ $npm install --save-dev gulp-imagemin
 
 $npm npm install --save gulp-htmlmin
 
+$npm install gulp-rename --save-dev
+
+$npm npm install --save readable-stream
 
 ## run Task
 
@@ -30,5 +33,9 @@ $gulp cssTask
 $gulp jsTask
 
 $gulp imgTask
+
+$gulp htmlTask
+
+$gulp compress
 
 $gulp watch

@@ -4,6 +4,10 @@
  var minifyJS  = require('gulp-minify');
  var imagemin = require('gulp-imagemin');
  var htmlmin = require('gulp-htmlmin');
+ var rename = require('gulp-rename');
+
+ var uglify = require('gulp-uglify');
+ var pipeline = require('readable-stream').pipeline;
 
  // import imageminWebp from 'imagemin-webp';
 
@@ -20,11 +24,20 @@
  gulp.task('jsTask', function() {
      return gulp.src('src/js/*.js')
          .pipe(minifyJS())
-         .pipe(gulp.dest('build/js'));
+         .pipe(gulp.dest('src/js'));
+ });
+
+ // compress JS and replace it
+ gulp.task('compress', function () {
+     return pipeline(
+         gulp.src('src/js/*.js'),
+         uglify(),
+         gulp.dest('src/js')
+     );
  });
 
 // minify HTML
- gulp.task('minifyHTML', () => {
+ gulp.task('htmlTask', () => {
      return gulp.src('src/html/*')
          .pipe(htmlmin({ collapseWhitespace: true }))
          .pipe(gulp.dest('build/html'));
@@ -59,6 +72,7 @@ gulp.task('imgTask', function() {
      gulp.watch('src/css/*', gulp.series('cssTask'));
      gulp.watch('src/js/*', gulp.series('jsTask'));
      gulp.watch('src/img/*', gulp.series('imgTask'));
+     gulp.watch('src/html/*', gulp.series('htmlTask'));
  });
 
  // Description  Default Task

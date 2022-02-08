@@ -1,4 +1,4 @@
-## STEP BY STEP
+ ## STEP BY STEP
 
 $npm install gulp-cli -g
 
@@ -26,6 +26,9 @@ $npm install gulp-rename --save-dev
 
 $npm npm install --save readable-stream
 
+
+$npm install --save-dev gulp-jsbeautifier
+
 ## run Task
 
 $gulp cssTask
@@ -37,5 +40,7 @@ $gulp imgTask
 $gulp htmlTask
 
 $gulp compress
+
+$gulp beautify
 
 $gulp watch

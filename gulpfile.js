@@ -1,3 +1,6 @@
+ 
+
+
   // Configuration de Gulp.js
  var gulp = require('gulp') ;
  var minifyCSS  = require('gulp-csso');
@@ -12,8 +15,20 @@
  // import imageminWebp from 'imagemin-webp';
  var beautify = require('gulp-jsbeautifier');
 
+ // task avif and other
+  var squoosh = require('gulp-libsquoosh');
+  gulp.task('imgAvif', () =>
+      gulp.src('src/img/*')
+      .pipe(
+          squoosh({
+              oxipng: {},
+              webp: {},
+              avif: {},
+          })
+      ).pipe(gulp.dest('./dist/img'))
+   );
 
- // beautify  html js CSS
+  // beautify  html js CSS
  gulp.task('beautify', () =>
      gulp.src(['src/css/*.css', 'src/html/*.html', 'src/js/*.js'])
          .pipe(beautify())
@@ -111,5 +126,4 @@ gulp.task('imgTask', function() {
 
  // RUN Default Task
 // gulp.task('default', gulp.parallel('default' ));
-
 

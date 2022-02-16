@@ -29,6 +29,9 @@ $npm npm install --save readable-stream
 
 $npm install --save-dev gulp-jsbeautifier
 
+// https://www.npmjs.com/package/gulp-libsquoosh
+$ npm install --save-dev gulp-libsquoosh
+
 ## run Task
 
 $gulp cssTask
@@ -44,3 +47,7 @@ $gulp compress
 $gulp beautify
 
 $gulp watch
+
+$gulp imgAvif
+
+ 

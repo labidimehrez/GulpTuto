@@ -50,4 +50,6 @@ $gulp watch
 
 $gulp imgAvif
 
- 
+$gulp minifyCssSuffixMin
+
+$gulp minifyJsSuffixMin
